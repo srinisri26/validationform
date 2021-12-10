@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Id Card Form</title>
+     <!--CSS Bootstrap-->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <!--JS Bootstrap-->
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+     <!--style  css-->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form name="studentidForm" class="form" action="" onsubmit="return formidValidate()">
+            <div class="header">
+                <h2>RAN Matriculation Higher Secondary School</h2>
+                <p>No:55,Pulicut Street,Kavaraipettai,Gummidipoondi Taluk,Thiruvallur District-601206</p>
+                <p>ID Card Data Collection Site For Any Questions</p>
+                <h5>Call Mr.Pachaiappan Mob:9840782902</h5>
+            </div>
+            <div class="form-Control">
+                <label for="studname" style="font-weight: 600;font-size: 17px; margin-left: 15px;">Student<sup style="color: red;">*</sup></label>
+                <input type="name"   placeholder="Enter the Full Name" id="studname">
+                <p  style="color: gray; margin-left: 15px;">Full Name</p>
+                <p id="fn" style="margin-left: 15px;"></p>
+
+            <!--Gender-->
+            <select class="form-Control" style="margin-left: 10px; width: 95%;">
+                <option>-select-</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+              <p  style="color: gray; margin-left: 15px;">Gender</p>
+
+              <!--Class Studying-->
+            <label class="labelName"><h2 style="font-weight: 600;font-size: 17px;">Class Studying <sup style="color: red;">*</sup></h2>  
+            </label>
+                <div class="tempContDiv matrixTable matrixNewWrapper"><div >
+                <table width="100%" border="0" cellspacing="0" cellpadding="0"><thead> <tr><th></th> 
+                
+                <th style="font-size: 17px;font-weight: 600;letter-spacing: 1px;position: relative; top: -10px;">Standard</th>
+                
+                <th style="font-size: 17px;font-weight: 600;letter-spacing: 1px;position: relative; top: -10px;">Section</th>
+                
+                </tr></thead>
+                <tbody> 
+                <tr><th style="font-weight: 400;font-size: 17px; color: gray;">&nbsp;&nbsp;Class&nbsp;and Section</th>
+                <td> <div class = "form_sBox"><div class="customArrow"></div>
+                <select  id = "MatrixChoice_row1_column1"  name="MatrixChoice_row1" elname="MatrixChoice" columnValue="Standard" columndisplay="Standard" rowValue="Class&#x20;and&#x20;Section">
+                <option value="">-Select-</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option></select></div></td>
+                <td> 
+                <div class = "form_sBox"><div class="customArrow"></div><select  id = "MatrixChoice_row1_column2" name="MatrixChoice_row1" elname="MatrixChoice" columnValue="Section" columndisplay="Section" rowValue="Class&#x20;and&#x20;Section">
+                <option value="">-Select-</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option></select></div></td>
+                </tr>
+                </tbody></table>
+                <div class="clearBoth"></div></div><p class="errorMessage" elname="error" id="error-MatrixChoice"></p>
+                </div><div class="clearBoth"></div></li>
+            
+            <!--Parent Name-->
+            <label for="parents"  style="font-weight: 600;font-size: 17px;margin-top: 5px;">Parent Name<sup style="color: red;" >*</sup></label>
+            <select class="form-Control"  style="margin-top: 8px; margin-left: 10px; width: 95%;">
+                <option>-select-</option>
+                <option>Mr.</option>
+                <option>Mrs.</option>
+                <option>Ms.</option>
+              </select>
+              <p style="color: gray; margin-left: 15px;">Title</p>
+            <input type="name"  placeholder="Enter the Full Name" id="parents" >
+            <p style="color: gray; margin-left: 15px;">Name</p>
+            <p id="pa" style="margin-left: 15px;"></p>
+
+            <!--Address-->
+            <label for="address"  style="font-weight: 600;font-size: 17px;margin-left: 15px;">Address<sup style="color: red;">*</sup></label>
+            <input type="name"  placeholder="Enter the Address" id="address">
+            <p style="color: gray; margin-left: 15px;">Street Address</p>
+            <p id="ad" style="margin-left: 15px;"></p>
+
+            <!--Address Line 2-->
+            <input type="name" id="addline" >
+            <p style="color: gray; margin-left: 15px;">Address Line 2</p>
+            <p id="adl" style="margin-left: 15px;"></p>
+
+            <!--City/Town/District-->
+            <input type="name"  id="city" >
+            <p style="color: gray; margin-left: 15px;">City/Town/District</p>
+            <p id="cty"  style="margin-left: 15px;"></p>
+
+            <!--Pin Code-->
+            <input  id="pin">
+            <p style="color: gray; margin-left: 15px;">Pin Code</p>
+            <p id="pn" style="margin-left: 15px;"></p>
+
+            <!--Phone Number-->
+            <label style="font-weight: 600;font-size: 17px;margin-left: 15px;">Phone Number<sup style="color: red;">*</sup></label>
+            <input id="phone">
+            <p id="phn" style="margin-left: 15px;"></p>
+
+            <!--DOB-->
+            <label  style="font-weight: 600;font-size: 17px;margin-left: 15px;">Date Of Birth<sup style="color: red;">*</sup></label>
+            <input type="date" placeholder="D-O-B" id="dob">
+            <p id="db" style="margin-left: 15px;"></p>
+
+            <!--Blood Group-->
+            <label style="font-weight: 600;font-size: 17px;margin-left: 15px;">Blood Group<sup style="color: red;">*</sup></label>
+            <select class="form-Control" style="margin-top: 8px; margin-left: 10px; width: 95%;">
+                <option>-select-</option>
+                <option>O-</option>
+                <option>O+</option>
+                <option>A-</option>
+                <option>A+</option>
+                <option>B-</option>
+                <option>B+</option>
+                <option>AB-</option>
+                <option>AB+</option>
+            </select>
+        </div>
+            <input style="color: white;background-color: blue;border-style: none;border-radius:10px;font-size: 20px;cursor: pointer;padding: 5px 10px 5px 10px;" type="submit" value="Submit">
+       
+        </form>
+    </div>
+    <script>
+        function formidValidate()
+        {
+            let studname=document.studentidForm.studname.value;
+            if(studname == null || studname == "")
+            {
+                document.getElementById("fn").innerHTML="Enter The Value For This Field";
+                document.getElementById("fn").style.color="red";
+                document.getElementById("studname").style.borderColor="red";
+                return false;
+               
+            }
+            else
+            {
+                document.getElementById("fn").innerHTML="";
+                document.getElementById("studname").style.borderColor="green";
+            }
+
+            let parents=document.studentidForm.parents.value;
+            if(parents == null || parents == "")
+            {
+                document.getElementById("pa").innerHTML="Enter The Value For This Field";
+                document.getElementById("pa").style.color="red";
+                document.getElementById("parents").style.borderColor="red";
+                return false;
+               
+            }
+            else
+            {
+                document.getElementById("pa").innerHTML="";
+                document.getElementById("parents").style.borderColor="green";
+            }
+
+            let address=document.studentidForm.address.value;
+            if(address == null || address == "")
+            {
+                document.getElementById("ad").innerHTML="Enter The Value For This Field";
+                document.getElementById("ad").style.color="red";
+                document.getElementById("address").style.borderColor="red";
+                return false;
+            }
+            else
+            {
+                document.getElementById("ad").innerHTML="";
+                document.getElementById("address").style.borderColor="green";
+            }
+
+            let addline=document.studentidForm.addline.value;
+            if(addline == null || addline == "")
+            {
+                document.getElementById("adl").innerHTML="Enter The Value For This Field";
+                document.getElementById("adl").style.color="red";
+                document.getElementById("addline").style.borderColor="red";
+                return false;
+            }
+            else
+            {
+                document.getElementById("adl").innerHTML="";
+                document.getElementById("addline").style.borderColor="green";
+            }
+
+            let city=document.studentidForm.city.value;
+            if(city == null || city == "")
+            {
+                document.getElementById("cty").innerHTML="Enter The Value For This Field";
+                document.getElementById("cty").style.color="red";
+                document.getElementById("city").style.borderColor="red";
+                return false;
+            }
+            else
+            {
+                document.getElementById("cty").innerHTML="";
+                document.getElementById("city").style.borderColor="green";
+            }
+
+            let pin=document.studentidForm.pin.value;
+            if(pin == null || pin == "")
+            {
+                document.getElementById("pn").innerHTML="Enter The Value For This Field";
+                document.getElementById("pn").style.color="red";
+                document.getElementById("pin").style.borderColor="red";
+                return false;
+            }
+            else
+            {
+                document.getElementById("pn").innerHTML="";
+                document.getElementById("pin").style.borderColor="green";
+            }
+
+            let phone=document.studentidForm.phone.value;
+            if(phone == null || phone == "")
+            {
+                document.getElementById("phn").innerHTML="Enter The Value For This Field";
+                document.getElementById("phn").style.color="red";
+                document.getElementById("phone").style.borderColor="red";
+                return false;
+            }
+            else
+            {
+                document.getElementById("phn").innerHTML="";
+                document.getElementById("phone").style.borderColor="green";
+            }
+
+            let dob=document.studentidForm.dob.value;
+            if(dob == null || dob == "")
+            {
+                document.getElementById("db").innerHTML="Enter The Value For This Field";
+                document.getElementById("db").style.color="red";
+                document.getElementById("dob").style.borderColor="red";
+                return false;
+            }
+            else
+            {
+                document.getElementById("db").innerHTML="";
+                document.getElementById("dob").style.borderColor="green";
+            }
+        }
+    </script>
+</body>
+</html>
